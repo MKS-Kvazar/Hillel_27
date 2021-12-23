@@ -16,6 +16,7 @@ public class Main {
     }
 
     private void Task_1() {
+//        Все варианты мониторов synchronized закоментированы в классе 'PointTask'
         Point point = new Point(0, 0);
         ExecutorService service = Executors.newFixedThreadPool(2000);
         List<Future<?>> array = new ArrayList<>();
@@ -36,7 +37,16 @@ public class Main {
     }
 
     private void Task_2() {
-
+        FibonacciThread thread = new FibonacciThread();
+        thread.start();
+        try {
+            TimeUnit.SECONDS.sleep(3);
+            thread.interrupt();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("a = " + thread.getA());
+        System.out.println("b = " + thread.getB());
     }
 
     private void Task_3() {
@@ -46,7 +56,6 @@ public class Main {
         try {
             TimeUnit.SECONDS.sleep(3);
             thread.interrupt();
-            thread.join();
         } catch (Exception e) {
             e.printStackTrace();
         }

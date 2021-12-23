@@ -13,6 +13,6 @@ public class PointTask implements Runnable {
 //        point.movieS(1, 1);
 //        point.movieLock(1,1);
 //        Point.movieSS(point,1, 1);
-        Point.movieLockS(point,1,1);
+        Point.movieLockS(point, 1, 1);
     }
 }

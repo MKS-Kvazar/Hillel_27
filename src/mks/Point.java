@@ -28,10 +28,11 @@ public class Point {
         }
     }
 
-     public static synchronized void movieSS(Point point, int dx, int dy) {
+    public static synchronized void movieSS(Point point, int dx, int dy) {
         point.x += dx;
         point.y += dy;
     }
+
     public static void movieLockS(Point point, int dx, int dy) {
         synchronized (lockStatic) {
             point.x += dx;
